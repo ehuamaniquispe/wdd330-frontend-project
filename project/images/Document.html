@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://localhost/wdd330-frontend/project/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link href="./Document_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+     <script src="./Document_files/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+        <!-- jquery cdn -->
+        <script src="./Document_files/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="./Document_files/style.css">
+    <title>Document</title>
+</head>
+<body data-new-gr-c-s-check-loaded="14.987.0" data-gr-ext-installed="" class="">
+
+<div id="container" class="container">
+
+<h1>Students' Attendance Report  </h1> 
+
+<!-- information section -->
+    <section>
+        <!-- Button trigger modal -->
+        <h3>Find information on how to use this software</h3>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Read me
+        </button>
+    </section>
+
+<!-- search people (future students) -->
+    <section>
+        <h3>1.- Add New Student</h3>
+        <div class="input-group w-50" id="searchPeople">
+        
+            <label class="input-group-text" for="idNumber">Search by national ID</label> 
+            <input class="form-control " type="number" id="idNumber" name="idNumber">
+            <button class="btn btn-primary" id="searchById"> Search</button>
+            <p id="passwordHelpBlock" class="form-text text-muted">
+                ID provided by the peruvian goverment. Examples: 70269138 , 44888882, 41508022, 41111938, 43613524
+            </p>
+        </div>
+        
+        <!-- show results of students search -->
+        <div id="results"></div> 
+    </section>
+
+    <!-- date picket -->
+    <section>
+        <h3>2.- Pick Classes Range</h3>
+        <div class="input-group w-50">
+            <input class="form-control " type="date" id="firstDate" placeholder="choose first date">
+            <input class="form-control " type="date" id="lastDate" placeholder="choose last date">
+            <button class="btn btn-primary" type="button" id="dateBtn"> Proccess Range</button>
+        </div>
+    </section>
+    
+    <!-- table for students attendance-->
+    <section>
+        <h3>3.- Student List</h3>
+        <table class="table table-hover" id="studentsListTable">
+            <!-- <thead class="table-dark "> -->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="studentsTable"><tr>
+                            <td>MARIA ISABEL </td>
+                            <td>VASQUEZ HINOJOSA</td>
+                        </tr><tr>
+                            <td>EDUARDO </td>
+                            <td>HUAMANI QUISPE</td>
+                        </tr><tr>
+                            <td>JULIAN </td>
+                            <td>HUAMANI QUISPE</td>
+                        </tr><tr>
+                            <td>MARIA LUISA </td>
+                            <td>LETTE SEMINARIO</td>
+                        </tr></tbody>
+        </table>
+    </section>
+
+    <!-- table for student report -->
+    <section>
+        <h3>4.- Student Report</h3>
+        <select class="form-control w-50" name="studentsSelect" id="studentsSelect"><option>select a student</option><option value="0">  MARIA ISABEL VASQUEZ HINOJOSA</option><option value="1">  EDUARDO HUAMANI QUISPE</option><option value="2">  JULIAN HUAMANI QUISPE</option><option value="3">  MARIA LUISA LETTE SEMINARIO</option></select>
+        <div class="table" id="studentReport"></div>
+
+    </section>
+
+    
+    <!-- modal for information -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                   <li>Add all students you want to be in your class. Use the national ID provided by the peruvian goverment (8 digits) to search for the information. The students information will be saved in a local storage.</li> 
+                   <li>Choose the start and end date for your class.</li> 
+                   <li>Fill in the attendance (P: Present, A: Absent, T: Tardy).</li> 
+                   <li>See and Individual report by choosen a student.</li> 
+                </ol>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+    <script src="./Document_files/main.js" type="module"></script>
+
+
+
+
+</body></html>

@@ -1,0 +1,56 @@
+section {
+    padding: 20px;    
+    border-style:solid;
+    border-radius: 15px;
+    border-color: lightgray;
+    margin-bottom: 5px;
+    border-width: 1px;
+
+    max-width: auto;
+  
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+h1{
+    padding: 10px;
+    background-color:#1531a1;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+
+h3{
+    color: #4f87ff;
+    font-size: medium;
+    
+}
+
+h5{
+    color:green;
+    font-size: medium;
+    text-align: center;
+
+}
+
+table{
+    max-width: inherit;
+    /* table-layout: fixed; */
+    width: 100% 
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li{
+    
+    margin-bottom: 15px;
+
+}
