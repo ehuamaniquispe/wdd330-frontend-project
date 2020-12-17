@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+   
+       <!-- jquery cdn -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../style.css">
+    <title>week2</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <h1>Topic: Functions</h1>
+        <section>
+        <p> Here there are some activities on how we can declare functions in different ways.</p>
+        </section>    
+        <section>
+            <h2>Function Declaration</h2>
+            <p>function hello(){
+                console.log('Hello World!');
+            }</p>
+            <button class="btn btn-success" type="button" id="btn1"> try </button>
+            <div id="result1"></div>
+        </section>
+        
+        <section>
+            <h2>Function Expressions</h2>
+            <p>const goodbye = function(){
+                console.log('Goodbye World!');
+            };
+            </p>
+            <button class="btn btn-success" type="button" id="btn2"> try </button>
+            <div id="result2"></div>
+        </section>
+    
+        <section>
+            <h2>Function Constructors</h2>
+            <p>const hi = new Function('console.log("Hi World!");');
+            </p>
+            <button class="btn btn-success" type="button" id="btn3"> try </button>
+            <div id="result3"> result on the console</div>
+        </section>
+    
+        <section>
+            <h2>Arrow Functions</h2>
+            <p>const hello = () => alert('Hello World!');
+            </p>
+            <button class="btn btn-success" type="button" id="btn4"> try </button>
+            <div id="result4"></div>
+        </section>
+
+
+        <a class="btn btn-warning" href="../../index.html"><< Main </a>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
