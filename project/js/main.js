@@ -39,8 +39,13 @@ let rows = [];
 
         
         // calling data from API
-        let url = `https://dni.optimizeperu.com/api/persons/${dni}`;
-        fetch(url)
+        const token = 'e713e5dd3af535afa672c349fefb012a7565e21859e4703a14129a937b5350d7';
+        let url = `https://apiperu.dev/api/dni/${dni}`;
+        fetch(url, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+        })
         .then((response) => response.json())
         .then((results) =>{
             console.log(results);
@@ -61,13 +66,19 @@ let rows = [];
 
  // format the person's information
 let buildPersonInfo=(data)=>{
-    let table = `<b>ID:</b> ${data.dni} <br>`;
-    table += `<b>Name:</b> ${data.name} <br>`;
-    table += `<b>First Name:</b> ${data.first_name} <br>`;
-    table += `<b>Last Name:</b> ${data.last_name}`;
+    
+    let table = `<b>ID:</b> ${data.data.numero} <br>`;
+    table += `<b>Name:</b> ${data.data.nombre_completo} <br>`;
+    table += `<b>First Name:</b> ${data.data.nombres} <br>`;
+    table += `<b>Last Name:</b> ${data.data.apellido_paterno}`;
+    console.log(data.data.numero);
+    // let table = `<b>ID:</b> ${data.dni} <br>`;
+    // table += `<b>Name:</b> ${data.name} <br>`;
+    // table += `<b>First Name:</b> ${data.first_name} <br>`;
+    // table += `<b>Last Name:</b> ${data.last_name}`;
   
     result.innerHTML = table;
-    addBtn(data);//calling function
+    addBtn(data.data);//calling function
 
 }
 
@@ -95,7 +106,7 @@ let addBtn =(personData)=>{
 
 //adding student to the list (local storage)
 let addStudent=(nwStudentData)=>{
-    console.log("adding student..." +nwStudentData.name);
+    console.log("adding student..." +nwStudentData.nombres);
     students.push(nwStudentData);
     console.log(students);
     localStorage.setItem(`studentList`,JSON.stringify(students));
@@ -111,8 +122,8 @@ let showStudents =() =>{
     if (students){ //checking students to show in the list
         for(let i = 0;i<students.length; i++){
             let row = `<tr>
-                            <td>${students[i].name} </td>
-                            <td>${students[i].first_name} ${students[i].last_name}</td>
+                            <td>${students[i].nombres} </td>
+                            <td>${students[i].apellido_paterno} ${students[i].apellido_materno}</td>
                         </tr>`;
             studentsTable.innerHTML += row;
         }
@@ -224,7 +235,7 @@ let showStudentsSelect = () =>{
         studentsSelect.appendChild(optionDefault);
         for(let i = 0;i<students.length; i++){
             let option = document.createElement("option");
-            option.text = `  ${students[i].name} ${students[i].first_name} ${students[i].last_name}`;
+            option.text = `  ${students[i].nombres} ${students[i].apellido_paterno} ${students[i].apellido_materno}`;
             option.value = i;
             studentsSelect.appendChild(option);
         }
